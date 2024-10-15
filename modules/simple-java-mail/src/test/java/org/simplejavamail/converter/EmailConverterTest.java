@@ -305,28 +305,28 @@ public class EmailConverterTest {
 		final String eml = normalizeNewlines(EmailConverter.emailToEML(email));
 		final String emlRoundtrip = normalizeNewlines(EmailConverter.emailToEML(EmailConverter.emlToEmail(EmailConverter.emailToEML(email))));
 
-		assertThat(eml).contains("Content-Type: text/plain; filename=\"dummy text1.txt\"; name=\"dummy text1.txt\"\n"
+		assertThat(eml).contains("Content-Type: text/plain; name=\"dummy text1.txt\"\n"
 				+ "Content-Transfer-Encoding: 7bit\n"
 				+ "Content-Disposition: attachment; filename=\"dummy text1.txt\"\n"
 				+ "Content-ID: <dummy text1.txt@" + contentIDExtractor(eml, "dummy text1.txt") + ">\n"
 				+ "Content-Description: This is dummy text1\n"
 				+ "\n"
 				+ "Cupcake ipsum dolor sit amet donut. Apple pie caramels oat cake fruitcake sesame snaps. Bear claw cotton candy toffee danish sweet roll.");
-		assertThat(eml).contains("Content-Type: text/plain; filename=\"dummy text2.txt\"; name=\"dummy text2.txt\"\n"
+		assertThat(eml).contains("Content-Type: text/plain; name=\"dummy text2.txt\"\n"
 				+ "Content-Transfer-Encoding: 7bit\n"
 				+ "Content-Disposition: attachment; filename=\"dummy text2.txt\"\n"
 				+ "Content-ID: <dummy text2.txt@" + contentIDExtractor(eml, "dummy text2.txt") + ">\n"
 				+ "Content-Description: This is dummy text2\n"
 				+ "\n"
 				+ "I love pie I love donut sugar plum. I love halvah topping bonbon fruitcake brownie chocolate. Sweet tootsie roll wafer caramels sesame snaps.");
-		assertThat(eml).contains("Content-Type: text/plain; filename=\"dummy text3.txt\"; name=\"dummy text3.txt\"\n"
+		assertThat(eml).contains("Content-Type: text/plain; name=\"dummy text3.txt\"\n"
 				+ "Content-Transfer-Encoding: 7bit\n"
 				+ "Content-Disposition: attachment; filename=\"dummy text3.txt\"\n"
 				+ "Content-ID: <dummy text3.txt@" + contentIDExtractor(eml, "dummy text3.txt") + ">\n"
 				+ "Content-Description: This is dummy text3\n"
 				+ "\n"
 				+ "Danish chocolate pudding cake bonbon powder bonbon. I love cookie jelly beans cake oat cake. I love I love sweet roll sweet pudding topping icing.");
-		assertThat(eml).contains("Content-Type: text/plain; filename=\"dummy text4.txt\"; name=\"dummy text4.txt\"\n"
+		assertThat(eml).contains("Content-Type: text/plain; name=\"dummy text4.txt\"\n"
 				+ "Content-Transfer-Encoding: 7bit\n"
 				+ "Content-Disposition: attachment; filename=\"dummy text4.txt\"\n"
 				+ "Content-ID: <dummy text4.txt@" + contentIDExtractor(eml, "dummy text4.txt") + ">\n"
@@ -335,28 +335,28 @@ public class EmailConverterTest {
 
 		// same assertions on the EML after converting to MimeMessage and back
 
-		assertThat(emlRoundtrip).contains("Content-Type: text/plain; filename=\"dummy text1.txt\"; name=\"dummy text1.txt\"\n"
+		assertThat(emlRoundtrip).contains("Content-Type: text/plain; name=\"dummy text1.txt\"\n"
 				+ "Content-Transfer-Encoding: 7bit\n"
 				+ "Content-Disposition: attachment; filename=\"dummy text1.txt\"\n"
 				+ "Content-ID: <dummy text1.txt@" + contentIDExtractor(emlRoundtrip, "dummy text1.txt") + ">\n"
 				+ "Content-Description: This is dummy text1\n"
 				+ "\n"
 				+ "Cupcake ipsum dolor sit amet donut. Apple pie caramels oat cake fruitcake sesame snaps. Bear claw cotton candy toffee danish sweet roll.");
-		assertThat(emlRoundtrip).contains("Content-Type: text/plain; filename=\"dummy text2.txt\"; name=\"dummy text2.txt\"\n"
+		assertThat(emlRoundtrip).contains("Content-Type: text/plain; name=\"dummy text2.txt\"\n"
 				+ "Content-Transfer-Encoding: 7bit\n"
 				+ "Content-Disposition: attachment; filename=\"dummy text2.txt\"\n"
 				+ "Content-ID: <dummy text2.txt@" + contentIDExtractor(emlRoundtrip, "dummy text2.txt") + ">\n"
 				+ "Content-Description: This is dummy text2\n"
 				+ "\n"
 				+ "I love pie I love donut sugar plum. I love halvah topping bonbon fruitcake brownie chocolate. Sweet tootsie roll wafer caramels sesame snaps.");
-		assertThat(emlRoundtrip).contains("Content-Type: text/plain; filename=\"dummy text3.txt\"; name=\"dummy text3.txt\"\n"
+		assertThat(emlRoundtrip).contains("Content-Type: text/plain; name=\"dummy text3.txt\"\n"
 				+ "Content-Transfer-Encoding: 7bit\n"
 				+ "Content-Disposition: attachment; filename=\"dummy text3.txt\"\n"
 				+ "Content-ID: <dummy text3.txt@" + contentIDExtractor(emlRoundtrip, "dummy text3.txt") + ">\n"
 				+ "Content-Description: This is dummy text3\n"
 				+ "\n"
 				+ "Danish chocolate pudding cake bonbon powder bonbon. I love cookie jelly beans cake oat cake. I love I love sweet roll sweet pudding topping icing.");
-		assertThat(emlRoundtrip).contains("Content-Type: text/plain; filename=\"dummy text4.txt\"; name=\"dummy text4.txt\"\n"
+		assertThat(emlRoundtrip).contains("Content-Type: text/plain; name=\"dummy text4.txt\"\n"
 				+ "Content-Transfer-Encoding: 7bit\n"
 				+ "Content-Disposition: attachment; filename=\"dummy text4.txt\"\n"
 				+ "Content-ID: <dummy text4.txt@" + contentIDExtractor(emlRoundtrip, "dummy text4.txt") + ">\n"
