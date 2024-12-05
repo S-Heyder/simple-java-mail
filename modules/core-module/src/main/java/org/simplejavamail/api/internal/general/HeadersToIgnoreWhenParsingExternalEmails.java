@@ -49,7 +49,8 @@ public class HeadersToIgnoreWhenParsingExternalEmails {
             MessageHeader.CONTENT_TYPE,
             MessageHeader.CONTENT_TRANSFER_ENCODING,
             MessageHeader.RESENT_MESSAGE_ID,
-            MessageHeader.REPLY_TO
+            MessageHeader.REPLY_TO,
+			MessageHeader.CONTENT_DESCRIPTION
     );
 
 	/**

@@ -30,6 +30,7 @@ public enum MessageHeader {
     MIME_VERSION("MIME-Version"),
     CONTENT_TYPE("Content-Type"),
     CONTENT_TRANSFER_ENCODING("Content-Transfer-Encoding"),
+    CONTENT_DESCRIPTION("Content-Description"),
     CONTENT_MD5("Content-MD5"),
     CONTENT_LENGTH("Content-Length"),
     COLON(":"),
